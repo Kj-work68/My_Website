@@ -116,12 +116,14 @@
   
   /* พื้นที่ด้านขวา (หน้าเนื้อหาเว็บ) */
   .main-content {
-    flex: 1;
+    flex: 1;                  /* 🟢 บังคับให้พื้นที่ขยายเต็มสเปซที่เหลืออยู่ถัดจาก Sidebar */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-y: auto;         /* 🟢 ถ้าหน้าเนื้อหา (Welcome/About) ยาว ให้เกิด Scrollbar แค่ฝั่งขวา */
+    background-color: #1a2238; /* กันเหนียว: ถมสีพื้นหลังน้ำเงินเข้มรอไว้เลย */
+    box-sizing: border-box;
   }
-
   /* 📱 รองรับมือถือและแท็บเล็ตแนวตั้ง (หน้าจอเล็กกว่า 768px) */
 @media (max-width: 768px) {
     .app-layout {

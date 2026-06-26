@@ -5,7 +5,8 @@ import {
   LogoutOutlined, 
   HomeOutlined, 
   MenuFoldOutlined, 
-  MenuUnfoldOutlined 
+  MenuUnfoldOutlined,
+  UserOutlined
 } from '@ant-design/icons'; // เพิ่มไอคอนสำหรับกดหุบ-กาง
 import { useAuth } from '../../contexts/AuthContext';
 import './sidebar.css';
@@ -31,7 +32,7 @@ const Sidebar = () => {
         
         {/* ส่วนหัวแบรนด์ + ปุ่มกดหุบเมนู */}
         <div className="sidebar-header">
-          {!isCollapsed && <div className="sidebar-brand">MY APP</div>}
+          {!isCollapsed && <div className="sidebar-brand">MY</div>}
           <button 
             className="toggle-sidebar-btn" 
             onClick={() => setIsCollapsed(!isCollapsed)}
@@ -45,6 +46,11 @@ const Sidebar = () => {
             <HomeOutlined /> 
             {/* ถ้าหุบอยู่ ให้ซ่อนข้อความตัวหนังสือไว้ */}
             {!isCollapsed && <span>Welcome</span>}
+          </button>
+          <button className="menu-item active" onClick={() => navigate('/about')}>
+            <UserOutlined />
+            {/* ถ้าหุบอยู่ ให้ซ่อนข้อความตัวหนังสือไว้ */}
+            {!isCollapsed && <span>About</span>}
           </button>
         </nav>
 
