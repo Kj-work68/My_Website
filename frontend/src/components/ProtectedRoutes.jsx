@@ -16,7 +16,7 @@ export const PublicRoute = ({ children }) => {
     const { isAuthenticated } = useAuth();
 
     if (isAuthenticated) {
-        return <Navigate to="/dashboard" replace />;
+        return <Navigate to="/welcome" replace />;
     }
 
     return children;

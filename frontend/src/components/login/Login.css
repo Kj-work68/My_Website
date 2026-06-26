@@ -18,7 +18,7 @@
 
 .login-left-panel {
     flex: 1;
-    background: linear-gradient(135deg, #f03043 0%, #ff6a3d 100%);
+    background: linear-gradient(135deg, #1a237e 0%, #0277bd 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,7 +60,7 @@
   }
 
   .login-title {
-    color: #f03043;
+    color: #1a237e;
     font-size: 20px;
     letter-spacing: 1.5px;
     text-align: center;
@@ -86,13 +86,13 @@
   
   .divider-text {
     text-align: center;
-    color: #ff6a3d;
+    color: #0277bd;
     font-weight: 500;
     margin-bottom: 20px;
   }
 
   .login-submit-btn {
-    background: linear-gradient(90deg, #f03043 0%, #ff6a3d 100%) !important;
+    background: linear-gradient(90deg, #1a237e 0%, #0277bd 100%) !important;
     border: none !important;
     height: 45px;
     font-size: 16px;

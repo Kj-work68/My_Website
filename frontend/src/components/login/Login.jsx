@@ -18,7 +18,7 @@ const Login = () => {
     }); 
     
     // 2. สั่งย้ายหน้าไปที่ /dashboard
-    navigate('/dashboard');
+    navigate('/welcome');
 
     }
 
@@ -27,13 +27,13 @@ const Login = () => {
     <div className="login-page-container">
       <div className="login-card">
         
-        {/* ================= ฝั่งซ้าย (สีแดง/ส้ม) ================= */}
+      
         <div className="login-left-panel">
           <div className="brand-welcome">Welcome to</div>
           <div className="brand-logo">Website</div>
         </div>
 
-        {/* ================= ฝั่งขวา (ฟอร์มสีขาว) ================= */}
+     
         <div className="login-right-panel">
           <h2 className="login-title">LOGIN TO LOOK AT MY WEBSITE</h2>
 

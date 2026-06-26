@@ -1,0 +1,315 @@
+/* พื้นหลังและโครงสร้างหลักโทนน้ำเงินเข้มตามรูป */
+.portfolio-wrapper {
+    background-color: #1a2238; /* 🎨 หน้า Welcome ถมสีน้ำเงินเข้มของตัวเองตรงนี้ */
+    color: #ffffff;
+    padding: 40px;             /* ดันเนื้อหาเข้ามาข้างในให้สวยงาม */
+    min-height: 100vh;        /* ให้ความสูงยืดสุดหน้าจอ */
+    width: 100%;               /* กว้างเต็มพื้นที่ฝั่งขวา */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  
+  /* ส่วนหัว Navigation ด้านบน */
+  .portfolio-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 2%;
+    align-items: center;
+  }
+  
+  .profile-title {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .portfolio-nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    color: #8a99ad;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    color: #ffcc00; /* สีเหลืองทองเวลาเลือก */
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 2px;
+  }
+  
+  /* ส่วนจัดวางเนื้อหากลางจอ (แบ่งซ้าย-ขวา) */
+  .portfolio-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex: 1;
+  }
+  
+  .hero-left-content {
+    flex: 1.2;
+  }
+  
+  /* กล่องครอบชื่อที่มีเส้นขอบสีเหลืองตามรูป */
+  .name-box {
+    border: 1px solid rgba(255, 204, 0, 0.4);
+    padding: 20px 30px;
+    display: inline-block;
+    margin-bottom: 25px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .sub-title {
+    font-size: 28px;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  
+  .main-title {
+    font-size: 64px;
+    color: #ffcc00; /* ตัวอักษร PORTFOLIO สีเหลืองเด่น */
+    margin: 0;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 4px;
+  }
+  
+
+  .bio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 15px; /* ดันระยะให้ห่างลงมาจากขอบ name-box */
+  }
+
+  .read-more-btn {
+    background: none !important; /* ล้างพื้นหลังสีขาวที่ติดมาออกให้หมด */
+    border: none;
+    padding: 0;
+    color: #ffcc00;              /* ใช้สีเหลืองทองตามธีม Portfolio */
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: left;
+    font-family: inherit;
+    transition: color 0.3s ease, transform 0.2s;
+    text-decoration: none;
+  }
+  
+  .read-more-btn:hover {
+    color: #ffffff;              /* เวลาเอาเมาส์ชี้ให้เปลี่ยนเป็นสีขาวเด่นขึ้นมา */
+    transform: translateX(3px);  /* ขยับขวาเล็กน้อยเพิ่มความสวยงาม */
+  }
+  
+  /* 🟢 2. ตั้งค่ากล่องข้อความเริ่มต้นให้พับปิด (ความสูงเป็น 0) และซ่อนไว้ */
+  .bio-text {
+    max-width: 600px;
+    line-height: 1.7;
+    max-height: 0;               /* เริ่มต้นปิดไว้กว้าง 0 */
+    opacity: 0;                  /* จางหายไป */
+    overflow: hidden;            /* ซ่อนตัวหนังสือที่เลยกรอบออกมา */
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease; /* สไลด์เปิดนุ่มๆ */
+  }
+  
+  /* 🟢 3. เมื่อตัวแปร isExpanded เป็น true คลาส .show จะทำงานเพื่อกางกล่องออก */
+  .bio-text.show {
+    max-height: 500px;           /* ปลดล็อกความสูงเพื่อให้ข้อความสไลด์ลงมาจนครบ */
+    opacity: 1;                  /* ดึงความเข้มตัวอักษรกลับมา 100% */
+    margin-top: 15px;
+    transition: max-height 0.5s ease-in-out, opacity 0.4s ease; /* อนิเมชันตอนเปิด */
+  }
+  
+  /* สไตล์สีข้อความข้างในคงเดิม */
+  .en-bio {
+    color: #cbd5e1;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .th-bio {
+    color: #94a3b8;
+    font-size: 15px;
+  }
+  
+  /* ส่วนรูปภาพฝั่งขวาพร้อมเอฟเฟกต์วงเรืองแสง */
+  .hero-right-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-glow-circle {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* ส่วนโครงสร้าง Footer ด้านล่างสุด */
+  .portfolio-footer {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .follow-title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  .social-icons {
+    display: flex;
+    align-items: center;      /* ดึงไอคอนทุกตัว (ทั้ง SVG และ IMG) มาไว้ตรงกลางแนวตั้งเสมอกัน */
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  /* 🟢 2. ปรับตัวลิงก์ครอบไอคอนให้เป็น Flex และมีขอบเขตเท่ากัน */
+  .icon-link {
+    font-size: 24px;          /* ขนาดสำหรับไอคอน Ant Design */
+    color: #ffffff;
+    display: inline-flex;     /* เปลี่ยนเป็น inline-flex เพื่อล้างไลน์เบสข้อความเดิมออก */
+    align-items: center;      /* ล็อกวัตถุข้างในสุดให้อยู่ตรงกลางกล่อง */
+    justify-content: center;
+    width: 28px;              /* บังคับขนาดกล่องความกว้างเท่ากันทุกไอคอน */
+    height: 28px;             /* บังคับขนาดกล่องความสูงเท่ากันทุกไอคอน */
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .icon-link:hover {
+    transform: scale(1.2);
+  }
+  
+  .icon-link.fb:hover { color: #1877f2; }
+  .icon-link.gh:hover { color: #ffffff; }
+  .icon-link.ln:hover { color: #06c755; }
+  
+  /* 🟢 3. แก้ไขคลาสรูปภาพ LINE */
+  .line-icon-img {
+    width: 30px;              
+    height: 30px;
+    object-fit: contain;
+    display: block;          
+  }
+  
+  /* ส่วนโครงสร้าง Footer ด้านล่างสุด */
+  .portfolio-footer {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .follow-title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  .contact-phone {
+    font-size: 14px;
+    color: #8a99ad;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* 📱 จัดการหน้าเนื้อหา Portfolio บนมือถือและแท็บเล็ต */
+@media (max-width: 768px) {
+    .portfolio-wrapper {
+      padding: 20px;          /* ลด Padding รอบข้างลงเพื่อให้เหลือพื้นที่เนื้อหา */
+      min-height: calc(100vh - 60px); /* หักลบความสูงของสเปซมินิเซสชันบาร์ */
+    }
+  
+    /* ส่วนหัว */
+    .profile-title {
+      font-size: 18px;
+      text-align: center;
+    }
+  
+    /* 🟢 จุดสำคัญ: สลับหน้าฮีโร่ให้เรียงเป็นแนวตั้ง และเอารูปขึ้นก่อนข้อความ */
+    .portfolio-hero {
+      flex-direction: column-reverse; 
+      gap: 25px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+  
+    .hero-left-content {
+      align-items: center;    /* จัดตัวหนังสือตรงกลางเมื่ออยู่บนมือถือ */
+      text-align: center;
+      width: 100%;
+    }
+  
+    .name-box {
+      padding: 15px 20px;
+      margin-bottom: 15px;
+    }
+  
+    .sub-title {
+      font-size: 18px;        /* ลดขนาดฟอนต์ชื่อลงให้พอดีจอโทรศัพท์ */
+    }
+  
+    .main-title {
+      font-size: 38px;        /* ปรับขนาดคำว่า PORTFOLIO ไม่ให้ล้นขอบขวา */
+    }
+  
+    .read-more-btn {
+      align-self: center;     /* จัดปุ่ม Read More ให้อยู่กึ่งกลางจอ */
+    }
+  
+    .bio-text {
+      text-align: left;       /* แต่ตัวเนื้อหาประวัติยังคงชิดซ้ายเพื่อให้อ่านง่าย */
+    }
+  
+    /* ปรับวงกลมและรูปโปรไฟล์ให้สเกลเล็กลงตามขนาดจอมือถือ */
+    .image-glow-circle {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .profile-img {
+      width: 160px;
+      height: 160px;
+    }
+  
+    /* ส่วนท้าย Footer */
+    .portfolio-footer {
+      margin-top: 40px;
+    }
+  }

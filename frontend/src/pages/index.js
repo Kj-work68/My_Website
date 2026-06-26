@@ -1,1 +1,1 @@
-export {default as Login} from './login/Login';
+export {default as Welcome} from './welcome/Welcome'
