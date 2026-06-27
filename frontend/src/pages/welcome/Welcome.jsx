@@ -1,6 +1,6 @@
 import React , {useState} from 'react';
 import { FacebookOutlined, GithubOutlined, LineOutlined, PhoneOutlined } from '@ant-design/icons';
-import './welcome.css';
+import './Welcome.css';
 
 const Welcome = () => {
     const [isExpanded, setIsExpanded] = useState(false);

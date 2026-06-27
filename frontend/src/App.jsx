@@ -6,8 +6,8 @@ import {
   Welcome,
   About
 } from './pages'
-import Login from './components/login/Login'
-import Register from './components/register/Register'
+// import Login from './components/login/Login'
+// import Register from './components/register/Register'
 import Sidebar from './components/sidenavigatebar/Sidebar'
 import 'antd/dist/reset.css'
 

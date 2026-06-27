@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons'; // เพิ่มไอคอนสำหรับกดหุบ-กาง
 import { useAuth } from '../../contexts/AuthContext';
 import Footer from '../footer/Footer';
-import './sidebar.css';
+import './Sidebar.css';
 
 const Sidebar = () => {
   const { logout } = useAuth();
