@@ -1,5 +1,6 @@
 import React , {useState} from 'react';
 import { FacebookOutlined, GithubOutlined, LineOutlined, PhoneOutlined } from '@ant-design/icons';
+import myPhoto from '../../../public/picture/DSC_1696_cut.jpg'
 import './Welcome.css';
 
 const Welcome = () => {
@@ -44,7 +45,7 @@ const Welcome = () => {
 
         <div className="hero-right-image">
           <div className="image-glow-circle">
-            <img src="/public/picture/DSC_1696_cut.jpg" alt="Profile" className="profile-img" />
+            <img src={myPhoto} alt="My Photo" className="profile-img" />
           </div>
         </div>
       </div>
