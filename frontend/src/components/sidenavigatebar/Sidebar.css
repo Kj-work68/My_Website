@@ -1,11 +1,16 @@
-.app-layout {
+/* ==========================================================================
+   สไตล์ควบคุมเลย์เอาต์หลัก (วางทับทั้งหมดใน sidebar.css หรือ Sidebar.css)
+   ========================================================================== */
+   .app-layout {
     display: flex;
     min-height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
+    width: 100vw;            /* คุมขนาดความกว้างหน้าจอทั้งหมด */
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
   }
   
-  /* แถบเมนูด้านข้าง (เพิ่ม transition เพื่อความสมูทเวลาหุบเข้าออก) */
+  /* แถบเมนูด้านข้างฝั่งซ้าย */
   .sidebar-container {
     width: 240px;
     min-width: 240px;
@@ -16,13 +21,14 @@
     padding: 20px 15px;
     transition: width 0.3s cubic-bezier(0.2, 0, 0, 1), min-width 0.3s cubic-bezier(0.2, 0, 0, 1);
     box-sizing: border-box;
+    z-index: 10;
   }
   
-  /* 🟢 เมื่อแอปเลย์เอาต์ถูกสั่งให้พับ (Collapsed) บีบขนาด Sidebar เหลือ 80px */
+  /* เมื่อแอปเลย์เอาต์ถูกสั่งให้พับ (Collapsed) */
   .collapsed .sidebar-container {
     width: 80px;
     min-width: 80px;
-    padding: 20px 10px; /* ลดแพดดิ้งด้านข้างลงให้พอดีไอคอน */
+    padding: 20px 10px;
     align-items: center;
   }
   
@@ -47,7 +53,7 @@
     white-space: nowrap;
   }
   
-  /* 🟢 ปุ่มกด หุบ-กาง เมนู */
+  /* ปุ่มกด หุบ-กาง เมนู */
   .toggle-sidebar-btn {
     background: none;
     border: none;
@@ -85,9 +91,9 @@
     border-radius: 6px;
     transition: all 0.3s;
     white-space: nowrap;
+    margin-top: 10px;
   }
   
-  /* ปรับตำแหน่งไอคอนเมนูให้อยู่ตรงกลางตอนพับ */
   .collapsed .menu-item {
     justify-content: center;
     padding: 12px 0;
@@ -103,7 +109,6 @@
     margin-top: auto;
   }
   
-  /* ปรับปุ่ม Logout ของ Ant Design ตอนพับให้เหลือแต่ไอคอนกลมๆ */
   .collapsed .logout-btn {
     width: 40px;
     height: 40px;
@@ -111,34 +116,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%; /* ทำปุ่มวงกลมตอนพับ */
+    border-radius: 50%;
   }
   
-  /* พื้นที่ด้านขวา (หน้าเนื้อหาเว็บ) */
+  /* ==========================================================================
+     🟢 2. พื้นที่คอนเทนต์ฝั่งขวา (แก้ไขให้เต็มสเปซ 100% ถมสีน้ำเงินครอบคลุม)
+     ========================================================================== */
   .main-content {
-    flex: 1;                  /* 🟢 บังคับให้พื้นที่ขยายเต็มสเปซที่เหลืออยู่ถัดจาก Sidebar */
+    flex: 1;
+    min-width: 0;             /* ป้องกันโครงสร้าง Flex แบะออกเกินจอ */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-y: auto;         /* 🟢 ถ้าหน้าเนื้อหา (Welcome/About) ยาว ให้เกิด Scrollbar แค่ฝั่งขวา */
-    background-color: #1a2238; /* กันเหนียว: ถมสีพื้นหลังน้ำเงินเข้มรอไว้เลย */
+    background-color: #1a2238; /* 👈 บังคับถมสีน้ำเงินเข้มให้เต็มหน้าจอที่เหลือทั้งหมด */
     box-sizing: border-box;
+    overflow-y: auto;         
   }
-  /* 📱 รองรับมือถือและแท็บเล็ตแนวตั้ง (หน้าจอเล็กกว่า 768px) */
-@media (max-width: 768px) {
+  
+  /* ==========================================================================
+     3. รองรับมือถือและแท็บเล็ตแนวตั้ง (หน้าจอเล็กกว่า 768px)
+     ========================================================================== */
+  @media (max-width: 768px) {
     .app-layout {
-      flex-direction: column; /* เปลี่ยนจากซ้าย-ขวา มาเรียงบน-ลงล่าง */
+      flex-direction: column; 
+      overflow-y: auto;
     }
   
     .sidebar-container {
-      width: 100vw !important;
-      min-width: 100vw !important;
+      width: 100% !important;
+      min-width: 100% !important;
       height: auto;
       min-height: unset;
       padding: 15px;
     }
   
-    /* ปรับเมนูตอนอยู่บนมือถือให้เรียงแนวนอนชั่วคราว หรือซ่อนไว้ */
     .sidebar-header {
       margin-bottom: 10px;
     }

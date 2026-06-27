@@ -44,25 +44,11 @@ const Welcome = () => {
 
         <div className="hero-right-image">
           <div className="image-glow-circle">
-            <img src="/public/picture/DSC_1021_cut_1.jpg" alt="Profile" className="profile-img" />
+            <img src="/public/picture/DSC_1696_cut.jpg" alt="Profile" className="profile-img" />
           </div>
         </div>
       </div>
 
-      {/* ส่วนท้าย */}
-      <footer className="portfolio-footer">
-        <h3 className="follow-title">Contact</h3>
-        <div className="social-icons">
-          <a href="https://www.facebook.com/kachen.jantaket/" target="_blank" rel="noreferrer" className="icon-link fb"><FacebookOutlined /></a>
-          <a href="https://github.com/Kj-work68" target="_blank" rel="noreferrer" className="icon-link gh"><GithubOutlined /></a>
-          <a href="https://line.me/ti/p/GPDzP86Gd7" target="_blank" rel="noreferrer" className="icon-link ln">
-          <img src='/public/picture/line.png' alt="Line Icon" className="line-icon-img" />
-        </a>
-        </div>
-        <div className="contact-phone">
-          Call: 088-050-3773 <PhoneOutlined /> 
-        </div>
-      </footer>
 
     </div>
   );

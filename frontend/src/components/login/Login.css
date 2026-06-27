@@ -101,3 +101,15 @@
     margin-top: 10px;
     align-items: center;
   }
+
+  .register-link-text {
+    color: #1a237e;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline; /* 🟢 ทำขีดเส้นใต้ล่างข้อความ */
+    transition: color 0.2s ease;
+  }
+  
+  .register-link-text:hover {
+    color: #0277bd; /* เวลาเอาเมาส์ชี้ให้เปลี่ยนสีนิดนึง */
+  }

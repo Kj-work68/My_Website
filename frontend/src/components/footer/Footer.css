@@ -1,0 +1,37 @@
+.portfolio-footer {
+    width: 100%;
+    padding: 30px 20px;
+    background-color: #121824; /* สีพื้นหลังท้ายเว็บที่เข้มขึ้นมาอีกระดับเพื่อให้แยกแยะส่วนชัดเจน */
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: auto; /* 🟢 ตัวสำคัญ: ดันตัวเองให้อยู่ล่างสุดเสมอเมื่อคอนเทนต์ในหน้านั้นๆ มีน้อย */
+    box-sizing: border-box;
+  }
+  
+  .follow-title {
+    font-size: 18px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .icon-link {
+    color: #8a99ad;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-link:hover {
+    color: #ffcc00;
+    transform: translateY(-3px);
+  }

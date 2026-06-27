@@ -9,6 +9,7 @@ import {
   UserOutlined
 } from '@ant-design/icons'; // เพิ่มไอคอนสำหรับกดหุบ-กาง
 import { useAuth } from '../../contexts/AuthContext';
+import Footer from '../footer/Footer';
 import './sidebar.css';
 
 const Sidebar = () => {
@@ -32,7 +33,7 @@ const Sidebar = () => {
         
         {/* ส่วนหัวแบรนด์ + ปุ่มกดหุบเมนู */}
         <div className="sidebar-header">
-          {!isCollapsed && <div className="sidebar-brand">MY</div>}
+          {!isCollapsed && <div className="sidebar-brand">Kachen</div>}
           <button 
             className="toggle-sidebar-btn" 
             onClick={() => setIsCollapsed(!isCollapsed)}
@@ -55,24 +56,27 @@ const Sidebar = () => {
         </nav>
 
         {/* ปุ่ม Logout ท้าย Sidebar */}
-        <div className="sidebar-footer">
+        {/* <div className="sidebar-footer">
           <Button 
             type="primary" 
             danger 
-            block={!isCollapsed} /* ถ้ากางให้ปุ่มยืดเต็ม ถ้าหุบให้ปุ่มหดเหลือแค่ไอคอน */
+            block={!isCollapsed} 
             className="logout-btn"
             icon={<LogoutOutlined />} 
             onClick={handleLogout}
           >
             {!isCollapsed && "ออกจากระบบ"}
           </Button>
-        </div>
+        </div> */}
       </aside>
 
       {/* ฝั่งขวา: พื้นที่แสดงหน้าย่อยยืดตามพื้นที่ๆ เหลืออัตโนมัติ */}
       <main className="main-content">
         <Outlet /> 
+        <Footer />
       </main>
+
+      
     </div>
   );
 };

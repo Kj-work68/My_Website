@@ -1,3 +1,335 @@
-.text-color {
-    color: white;
-}
+.about-wrapper {
+    background-color: #1a2238;
+    color: #ffffff;
+    padding: 40px;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .about-header-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* 🟢 ปรับความกว้างให้ย่อลงมาเท่ากับบล็อกด้านล่าง */
+    width: 100%;
+    max-width: 1100px;        /* ล็อกไม่ให้กางเกินเนื้อหา */
+    margin: 0 auto 30px;      /* จัดให้อยู่กึ่งกลางจอคอมฯ และเว้นระยะห่างด้านล่าง */
+    
+    /* 🎨 ปรับดีไซน์ใหม่ให้ดูคลีนขึ้น ไม่เทอะทะ */
+    background-color: rgba(255, 255, 255, 0.02); /* ใช้พื้นหลังจางๆ สไตล์ Glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* เส้นขอบบางๆ จางๆ */
+    border-bottom: 2px solid #ffcc00;            /* ทิ้งท้ายด้วยเส้นล่างสีเหลืองทอง */
+    padding: 12px 20px;       /* ลด Padding แนวตั้งลงเพื่อไม่ให้กล่องหนาเกินไป */
+    border-radius: 8px;
+  }
+  
+  .about-header-box h1 {
+    margin: 0;
+    font-size: 26px;          /* ย่อขนาดฟอนต์หัวข้อลงมาเล็กน้อยให้ดูพอดี */
+    letter-spacing: 2px;
+    color: #ffffff;
+  }
+  
+  .about-content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  /* ส่วนข้อมูลส่วนตัว */
+  .personal-section {
+    display: flex;
+    gap: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .personal-image-side {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .profile-frame {
+    width: 200px;
+    height: 250px;
+    border: 4px solid #ffffff;
+    margin: 0 auto 15px;
+    overflow: hidden;
+  }
+  
+  .profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .name-display {
+    font-size: 20px;
+    color: #ffcc00;
+    margin: 10px 0 5px;
+  }
+  
+  .position-tag {
+    color: #8a99ad;
+    font-size: 14px;
+  }
+  
+  .personal-info-side {
+    flex: 2;
+  }
+  
+  .section-title {
+    color: #ffcc00;
+    border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .info-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-item .label {
+    font-weight: bold;
+    color: #ffcc00;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .info-item .value {
+    color: #e2e8f0;
+    line-height: 1.5;
+  }
+  
+  /* 🟢 ส่วนความสามารถ (2 คอลัมน์) */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* แบ่ง 2 คอลัมน์เท่ากัน */
+    gap: 25px;
+  }
+  
+  .skill-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .skill-card:hover {
+    border-color: #ffcc00;
+    transform: translateY(-5px);
+  }
+  
+  .skill-card h4 {
+    color: #ffcc00;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+  }
+  
+  .skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .skill-card li {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .skill-card li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #ffcc00;
+  }
+  
+  /* รองรับมือถือ */
+  @media (max-width: 768px) {
+    .personal-section {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .skills-grid {
+      grid-template-columns: 1fr; /* บนมือถือให้เหลือคอลัมน์เดียว */
+    }
+  }
+
+  /* จัดตําแหน่งปุ่มเปลี่ยนภาษาในหัวข้อ */
+.about-header-box {
+    position: relative; /* เพื่อให้ปุ่มสลับภาษาอิงตำแหน่งได้ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 🟢 สไตล์ปุ่มเปลี่ยนภาษาดีไซน์แบบล้ำๆ */
+  .lang-toggle-btn {
+    position: absolute;
+    right: 15px;              /* ชิดฝั่งขวาของกล่องที่ย่อแล้ว */
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 204, 0, 0.4);
+    color: #ffcc00;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .lang-toggle-btn:hover {
+    background-color: #ffcc00;
+    color: #1a2238;
+    transform: scale(1.05);
+  }
+  
+  /* ตอบรับหน้าจอมือถือ */
+  @media (max-width: 768px) {
+    .about-header-box {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .lang-toggle-btn {
+      position: static;      /* เด้งกลับมาต่อแถวแนวตั้งอัตโนมัติบนมือถือ */
+      margin-top: 5px;
+    }
+  }
+
+  /* ==========================================================================
+   สไตล์สำหรับเพิ่ม Work Experience (Timeline)
+   ========================================================================== */
+.experience-section {
+    margin-bottom: 40px;
+  }
+  
+  .experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    padding-left: 20px;
+    /* สร้างเส้นแกน Timeline ด้านซ้าย */
+    border-left: 2px solid rgba(255, 204, 0, 0.2); 
+  }
+  
+  .timeline-item {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-item:hover {
+    border-color: rgba(255, 204, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* จุดกลมๆ บนเส้น Timeline */
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -27px;
+    top: 24px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ffcc00;
+    border: 2px solid #1a2238;
+    box-shadow: 0 0 8px #ffcc00;
+  }
+  
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .job-role {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+  }
+  
+  .job-duration {
+    font-size: 14px;
+    color: #8a99ad;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 3px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .job-company {
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  
+  .job-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .job-details li {
+    font-size: 14.5px;
+    color: #cbd5e1;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .job-details li::before {
+    content: "•";
+    position: absolute;
+    left: 5px;
+    color: #ffcc00;
+    font-size: 18px;
+    top: -2px;
+  }
+  
+  /* ตอบรับหน้าจอมือถือ */
+  @media (max-width: 768px) {
+    .timeline-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .job-duration {
+      align-self: flex-start;
+    }
+  }
