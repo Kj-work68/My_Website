@@ -35,3 +35,25 @@
     color: #ffcc00;
     transform: translateY(-3px);
   }
+
+  /* สไตล์สำหรับแถวเบอร์โทรศัพท์ที่แยกลงมาด้านล่าง */
+.footer-phone-row {
+    margin-top: 15px; /* เว้นระยะห่างจากแถวไอคอนโซเชียลด้านบน */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .phone-text {
+    color: #8a99ad;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* เว้นช่องว่างระหว่างไอคอนโทรศัพท์กับตัวเลข */
+    transition: color 0.3s;
+  }
+  
+  /* เพิ่มลูกเล่นเวลาเอาเมาส์มาชี้ที่เบอร์โทร */
+  .phone-text:hover {
+    color: #ffcc00;
+  }
